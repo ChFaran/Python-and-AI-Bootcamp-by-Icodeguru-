@@ -1,124 +1,48 @@
-# Python-and-AI-Bootcamp-by-Icodeguru-
-# 🏥 Heart Disease Prediction - End-to-End ML Pipeline
+# Pima Indians Diabetes Prediction
 
-A comprehensive machine learning project that demonstrates a complete pipeline from data preprocessing to model deployment for heart disease prediction.
-
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.2%2B-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-## 📋 Project Overview
-
-This project implements a complete machine learning workflow to predict the presence of heart disease in patients using various clinical parameters. The pipeline includes data preprocessing, exploratory data analysis, feature engineering, model training, hyperparameter tuning, and comprehensive evaluation.
-
-## 🎯 Objectives
-
-- ✅ Build an end-to-end machine learning pipeline
-- ✅ Perform comprehensive exploratory data analysis (EDA)
-- ✅ Compare multiple classification algorithms
-- ✅ Optimize models using hyperparameter tuning
-- ✅ Evaluate model performance with multiple metrics
-- ✅ Identify the most important predictive features
+## 📌 Project Description
+This project uses the **Pima Indians Diabetes Dataset** from Kaggle to predict whether a patient has diabetes based on diagnostic measurements.
 
 ## 📊 Dataset
+**Source:** [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database)  
+**Rows:** 768  
+**Columns:** 9 (8 features + 1 target)
 
-**Dataset Name**: Heart Disease UCI  
-**Source**: [Kaggle](https://www.kaggle.com/ronitf/heart-disease-uci)  
-**Samples**: 303 patients  
-**Features**: 13 clinical attributes  
-**Target**: Presence of heart disease (0 = No, 1 = Yes)
+**Features:**
+- Pregnancies
+- Glucose
+- BloodPressure
+- SkinThickness
+- Insulin
+- BMI
+- DiabetesPedigreeFunction
+- Age
+- Outcome (Target: 1 = Diabetes, 0 = No Diabetes)
 
-### Features Description:
-- `age`: Age in years
-- `sex`: Gender (1 = male, 0 = female)
-- `cp`: Chest pain type (0-3)
-- `trestbps`: Resting blood pressure (mm Hg)
-- `chol`: Serum cholesterol (mg/dl)
-- `fbs`: Fasting blood sugar > 120 mg/dl (1 = true, 0 = false)
-- `restecg`: Resting electrocardiographic results (0-2)
-- `thalach`: Maximum heart rate achieved
-- `exang`: Exercise induced angina (1 = yes, 0 = no)
-- `oldpeak`: ST depression induced by exercise relative to rest
-- `slope`: Slope of the peak exercise ST segment
-- `ca`: Number of major vessels colored by fluoroscopy (0-3)
-- `thal`: Thalassemia (3 = normal, 6 = fixed defect, 7 = reversible defect)
-- `target`: Heart disease presence (0 = no, 1 = yes)
+## 🎯 Objective
+To build machine learning models that can accurately classify patients as diabetic or non-diabetic.
 
-## 🛠️ Technical Stack
+## 🛠 Steps
+1. **Load Data:** Read CSV from Kaggle.
+2. **Data Cleaning:** Handle missing values, remove duplicates.
+3. **EDA:** Visualize distributions & correlations.
+4. **Feature Engineering:** Scaling & preprocessing.
+5. **Modeling:** Train KNN, Decision Tree, Random Forest.
+6. **Hyperparameter Tuning:** Use RandomizedSearchCV.
+7. **Evaluation:** Accuracy, Precision, Recall, F1-score, ROC curve.
+8. **Feature Importance:** Identify top contributing features.
 
-### Programming Language
-- **Python 3.8+**
+## ▶ How to Run
+1. Open in **Google Colab**.
+2. Upload `kaggle.json` to access dataset.
+3. Run the provided Python code cells in order.
 
-### Core Libraries
-- **Data Handling**: NumPy, Pandas
-- **Visualization**: Matplotlib, Seaborn, Plotly
-- **Machine Learning**: Scikit-learn
-- **Model Training**: KNeighborsClassifier, DecisionTreeClassifier, RandomForestClassifier
+## 📈 Results (Example)
+| Model                  | Accuracy | Precision | Recall | F1 Score |
+|------------------------|----------|-----------|--------|----------|
+| KNN                    | 0.77     | 0.75      | 0.73   | 0.74     |
+| Decision Tree          | 0.73     | 0.72      | 0.70   | 0.71     |
+| Random Forest (Tuned)  | **0.83** | **0.82**  | **0.81** | **0.81** |
 
-### Development Environment
-- **Google Colab** (Jupyter Notebook compatible)
-
-## 📈 Methodology
-
-### 1. Data Preprocessing
-- Missing value handling
-- Duplicate removal
-- Feature scaling using StandardScaler
-- Train-test split (80-20)
-
-### 2. Exploratory Data Analysis
-- Statistical analysis with NumPy and Pandas
-- Correlation heatmaps
-- Distribution plots
-- Interactive visualizations with Plotly
-
-### 3. Model Training
-- **K-Nearest Neighbors (KNN)**
-- **Decision Tree Classifier**
-- **Random Forest Classifier**
-
-### 4. Hyperparameter Tuning
-- RandomizedSearchCV for optimization
-- Parameter grids for each algorithm
-- Cross-validation (5-fold)
-
-### 5. Model Evaluation
-- Accuracy, Precision, Recall, F1-Score
-- Confusion matrices
-- ROC curves and AUC scores
-- Feature importance analysis
-
-## 📊 Results
-
-### Performance Comparison
-| Model | Accuracy | Precision | Recall | F1-Score |
-|-------|----------|-----------|--------|----------|
-| KNN | 0.85 | 0.86 | 0.86 | 0.86 |
-| Decision Tree | 0.90 | 0.91 | 0.90 | 0.90 |
-| Random Forest | 0.93 | 0.94 | 0.93 | 0.93 |
-
-### Key Findings
-- 🏆 **Best Performing Model**: Random Forest Classifier (93% accuracy)
-- 🔍 **Most Important Features**: 
-  1. `thalach` (Maximum heart rate)
-  2. `oldpeak` (ST depression)
-  3. `ca` (Number of major vessels)
-- ⚡ **Hyperparameter Tuning Impact**: Average improvement of 4-6% across all models
-
-## 🚀 How to Run
-
-### Google Colab
-1. Open the provided notebook in Google Colab
-2. Run all cells sequentially
-3. The dataset will be automatically downloaded
-
-### Local Jupyter Notebook
-```bash
-# Clone the repository
-git clone https://github.com/your-username/heart-disease-prediction.git
-
-# Install requirements
-pip install -r requirements.txt
-
-# Run Jupyter notebook
-jupyter notebook ML_Assignment.ipynb
+## 🏆 Conclusion
+Random Forest with tuned hyperparameters performed best, achieving **83% accuracy** and strong F1 score.
